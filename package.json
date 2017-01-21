@@ -1,0 +1,23 @@
+{
+  "name": "example-node-express-app",
+  "version": "1.0.0",
+  "description": "learn express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfort/example-node-express-app.git"
+  },
+  "keywords": [
+    "express",
+    "learn"
+  ],
+  "author": "nfort",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nfort/example-node-express-app/issues"
+  },
+  "homepage": "https://github.com/nfort/example-node-express-app#readme"
+}
