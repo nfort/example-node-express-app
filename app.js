@@ -27,5 +27,6 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(app.get('port'), function() {
-    console.log(`Express has been start on http://localhost:${app.get('port')};\nPress Ctrl + C for finish`);
+    console.log(`Express has been start on http://localhost:${app.get('port')};\n` +
+                'Press Ctrl + C for finish');
 });
