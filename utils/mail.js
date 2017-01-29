@@ -1,11 +1,12 @@
 const nodemailer = require('nodemailer');
+const credendatials = require('../credentials');
 
 module.exports = function() {
     const mailTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'XXX',
-            pass: 'XXX'
+            user: credendatials.google.login,
+            pass: credendatials.google.pass
         }
     });
 

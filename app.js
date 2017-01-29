@@ -10,7 +10,7 @@ app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.disable('x-powered-by');
 
-emailServices.send('laikisounds@gmail.com', 'laisounds@gmail.com', 'text');
+// emailServices.send('laikisounds@gmail.com', 'laisounds@gmail.com', 'text');
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', function(req, res) {
@@ -24,7 +24,7 @@ app.get('/tours', function(req, res) {
             abbrev: 'USD'
         },
         tours: [
-            { name: 'Река Худ', price: '$99.95' },
+            { name: 'Река Худ', price: '$99.92' },
             { name: 'Орегоун Коуст', price: '$159.95' }
         ],
         specialsUrl: './january-specials',
@@ -48,7 +48,16 @@ app.use(function(err, req, res, next) {
     res.render('500');
 });
 
-app.listen(app.get('port'), function() {
-    console.log(`Express has been start on http://localhost:${app.get('port')};\n` +
-        'Press Ctrl + C for finish');
-});
+
+function startServer() {
+    app.listen(app.get('port'), function() {
+        console.log(`Express has been start on http://localhost:${app.get('port')};\n` +
+            'Press Ctrl + C for finish');
+    });
+}
+
+if (require.main === module) {
+    startServer();
+} else {
+    module.exports = startServer;
+}
