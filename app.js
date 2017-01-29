@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const emailServices = require('./utils/mail')();
 const fortune = require('./utils/fortunes');
 
 const app = express();
@@ -9,6 +10,7 @@ app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.disable('x-powered-by');
 
+emailServices.send('laikisounds@gmail.com', 'laisounds@gmail.com', 'text');
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', function(req, res) {
